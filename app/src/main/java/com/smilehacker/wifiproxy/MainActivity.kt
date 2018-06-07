@@ -10,6 +10,8 @@ import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
+import com.smilehacker.utils.RxBus
+import com.smilehacker.wifiproxy.model.ResetEvent
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         mTvRua.setOnClickListener {
             setWifiByAccessibility()
+            RxBus.postSticky(ResetEvent())
         }
         mBtnAccessibility.setOnClickListener {
             gotoOpenService()

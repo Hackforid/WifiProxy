@@ -25,15 +25,11 @@ class NieR {
         }
 
         fun build() : AutoMata {
-            val autoMata = AutoMata()
-            autoMata.actions = actions
-            return AutoMata()
+            val autoMata = AutoMata(actions)
+            return autoMata
         }
 
     }
 
-    class AutoMata {
-        var actions = LinkedList<Action>()
-    }
 
 }

@@ -8,8 +8,12 @@ import java.util.*
 class Action {
     val conditions : MutableList<Condition> = LinkedList()
     var job: Runnable? = null
+
+    var isFinish = false
 }
 
-data class Condition(val eventType: Int, val className: String) {
+interface Condition
 
-}
+data class EventCondition(val eventType: Int, val className: String): Condition
+
+data class DelayCondition(val delay: Long): Condition
